@@ -1,0 +1,2479 @@
+[
+  {
+    "id": 1,
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "acRate": "55.3%",
+    "markdown_content": "Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.\n\nYou may assume that each input would have ***exactly* one solution**, and you may not use the *same* element twice.\n\nYou can return the answer in any order.\n\n**Example 1:**\n\n```\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n```\n\n**Example 2:**\n\n```\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n```\n\n**Example 3:**\n\n```\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n```\n\n**Constraints:**\n\n* `2 <= nums.length <= 104`\n* `-109 <= nums[i] <= 109`\n* `-109 <= target <= 109`\n* **Only one valid answer exists.**\n\n**Follow-up:**Can you come up with an algorithm that is less than `O(n2)` time complexity?",
+    "starter_code": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        ",
+    "test_case": "[2,7,11,15]\n9",
+    "meta_data": "{\n  \"name\": \"twoSum\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"target\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer[]\",\n    \"size\": 2\n  },\n  \"manual\": false\n}",
+    "param_types": [
+      "integer[]",
+      "integer"
+    ],
+    "return_type": "integer[]",
+    "test_cases": [
+      {
+        "input": [
+          [
+            2,
+            7,
+            11,
+            15
+          ],
+          9
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            2,
+            4
+          ],
+          6
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Add Two Numbers",
+    "difficulty": "Medium",
+    "topic": "Linked List",
+    "acRate": "45.7%",
+    "markdown_content": "You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order**, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/02/addtwonumber1.jpg)\n\n```\nInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\n```\n\n**Example 2:**\n\n```\nInput: l1 = [0], l2 = [0]\nOutput: [0]\n```\n\n**Example 3:**\n\n```\nInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n```\n\n**Constraints:**\n\n* The number of nodes in each linked list is in the range `[1, 100]`.\n* `0 <= Node.val <= 9`\n* It is guaranteed that the list represents a number that does not have leading zeros.",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:\n        ",
+    "test_case": "[2,4,3]\n[5,6,4]",
+    "meta_data": "{\n  \"name\": \"addTwoNumbers\",\n  \"params\": [\n    {\n      \"name\": \"l1\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    },\n    {\n      \"name\": \"l2\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\",\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "ListNode",
+      "ListNode"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            2,
+            4,
+            3
+          ],
+          [
+            5,
+            6,
+            4
+          ]
+        ],
+        "expected": [
+          7,
+          0,
+          8
+        ]
+      },
+      {
+        "input": [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": [
+          0
+        ]
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ]
+        ],
+        "expected": [
+          8,
+          9,
+          9,
+          9,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "topic": "Hash Table",
+    "acRate": "36.5%",
+    "markdown_content": "Given a string `s`, find the length of the **longest** **substring** without duplicate characters.\n\n**Example 1:**\n\n```\nInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3.\n```\n\n**Example 2:**\n\n```\nInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n```\n\n**Example 3:**\n\n```\nInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n```\n\n**Constraints:**\n\n* `0 <= s.length <= 5 * 104`\n* `s` consists of English letters, digits, symbols and spaces.",
+    "starter_code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        ",
+    "test_case": "\"abcabcbb\"",
+    "meta_data": "{ \n  \"name\": \"lengthOfLongestSubstring\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          "abcabcbb"
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          "bbbbb"
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          "pwwkew"
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Median of Two Sorted Arrays",
+    "difficulty": "Hard",
+    "topic": "Array",
+    "acRate": "43.2%",
+    "markdown_content": "Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return **the median** of the two sorted arrays.\n\nThe overall run time complexity should be `O(log (m+n))`.\n\n**Example 1:**\n\n```\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n```\n\n**Example 2:**\n\n```\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n```\n\n**Constraints:**\n\n* `nums1.length == m`\n* `nums2.length == n`\n* `0 <= m <= 1000`\n* `0 <= n <= 1000`\n* `1 <= m + n <= 2000`\n* `-106 <= nums1[i], nums2[i] <= 106`",
+    "starter_code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        ",
+    "test_case": "[1,3]\n[2]",
+    "meta_data": "{\n  \"name\": \"findMedianSortedArrays\",\n  \"params\": [\n    {\n      \"name\": \"nums1\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"nums2\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"double\"\n  }\n}",
+    "param_types": [
+      "integer[]",
+      "integer[]"
+    ],
+    "return_type": "double",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "expected": 2.5
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Zigzag Conversion",
+    "difficulty": "Medium",
+    "topic": "String",
+    "acRate": "51.1%",
+    "markdown_content": "The string `\"PAYPALISHIRING\"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\n```\nP   A   H   N\nA P L S I I G\nY   I   R\n```\n\nAnd then read line by line: `\"PAHNAPLSIIGYIR\"`\n\nWrite the code that will take a string and make this conversion given a number of rows:\n\n```\nstring convert(string s, int numRows);\n```\n\n**Example 1:**\n\n```\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\n```\n\n**Example 2:**\n\n```\nInput: s = \"PAYPALISHIRING\", numRows = 4\nOutput: \"PINALSIGYAHRPI\"\nExplanation:\nP     I    N\nA   L S  I G\nY A   H R\nP     I\n```\n\n**Example 3:**\n\n```\nInput: s = \"A\", numRows = 1\nOutput: \"A\"\n```\n\n**Constraints:**\n\n* `1 <= s.length <= 1000`\n* `s` consists of English letters (lower-case and upper-case), `','` and `'.'`.\n* `1 <= numRows <= 1000`",
+    "starter_code": "class Solution:\n    def convert(self, s: str, numRows: int) -> str:\n        ",
+    "test_case": "\"PAYPALISHIRING\"\n3",
+    "meta_data": "{\n  \"name\": \"convert\",\n  \"params\": [\n    {\n      \"name\": \"s\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"numRows\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"string\"\n  }\n}",
+    "param_types": [
+      "string",
+      "integer"
+    ],
+    "return_type": "string",
+    "test_cases": [
+      {
+        "input": [
+          "PAYPALISHIRING",
+          3
+        ],
+        "expected": "PAHNAPLSIIGYIR"
+      },
+      {
+        "input": [
+          "PAYPALISHIRING",
+          4
+        ],
+        "expected": "PINALSIGYAHRPI"
+      },
+      {
+        "input": [
+          "A",
+          1
+        ],
+        "expected": "A"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "String to Integer (atoi)",
+    "difficulty": "Medium",
+    "topic": "String",
+    "acRate": "18.9%",
+    "markdown_content": "Implement the `myAtoi(string s)` function, which converts a string to a 32-bit signed integer.\n\nThe algorithm for `myAtoi(string s)` is as follows:\n\n1. **Whitespace**: Ignore any leading whitespace (`\" \"`).\n2. **Signedness**: Determine the sign by checking if the next character is `'-'` or `'+'`, assuming positivity if neither present.\n3. **Conversion**: Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.\n4. **Rounding**: If the integer is out of the 32-bit signed integer range `[-231, 231 - 1]`, then round the integer to remain in the range. Specifically, integers less than `-231` should be rounded to `-231`, and integers greater than `231 - 1` should be rounded to `231 - 1`.\n\nReturn the integer as the final result.\n\n**Example 1:**\n\n**Input:** s = \"42\"\n\n**Output:** 42\n\n**Explanation:**\n\n```\nThe underlined characters are what is read in and the caret is the current reader position.\nStep 1: \"42\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"42\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"42\" (\"42\" is read in)\n           ^\n```\n\n**Example 2:**\n\n**Input:** s = \" -042\"\n\n**Output:** -42\n\n**Explanation:**\n\n```\nStep 1: \"   -042\" (leading whitespace is read and ignored)\n            ^\nStep 2: \"   -042\" ('-' is read, so the result should be negative)\n             ^\nStep 3: \"   -042\" (\"042\" is read in, leading zeros ignored in the result)\n               ^\n```\n\n**Example 3:**\n\n**Input:** s = \"1337c0d3\"\n\n**Output:** 1337\n\n**Explanation:**\n\n```\nStep 1: \"1337c0d3\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"1337c0d3\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"1337c0d3\" (\"1337\" is read in; reading stops because the next character is a non-digit)\n             ^\n```\n\n**Example 4:**\n\n**Input:** s = \"0-1\"\n\n**Output:** 0\n\n**Explanation:**\n\n```\nStep 1: \"0-1\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"0-1\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"0-1\" (\"0\" is read in; reading stops because the next character is a non-digit)\n          ^\n```\n\n**Example 5:**\n\n**Input:** s = \"words and 987\"\n\n**Output:** 0\n\n**Explanation:**\n\nReading stops at the first non-digit character 'w'.\n\n**Constraints:**\n\n* `0 <= s.length <= 200`\n* `s` consists of English letters (lower-case and upper-case), digits (`0-9`), `' '`, `'+'`, `'-'`, and `'.'`.",
+    "starter_code": "class Solution:\n    def myAtoi(self, s: str) -> int:\n        ",
+    "test_case": "\"42\"",
+    "meta_data": "{\n  \"name\": \"myAtoi\",\n  \"params\": [\n    {\n      \"name\": \"s\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "integer",
+    "test_cases": []
+  },
+  {
+    "id": 10,
+    "title": "Regular Expression Matching",
+    "difficulty": "Hard",
+    "topic": "String",
+    "acRate": "29.1%",
+    "markdown_content": "Given an input string `s` and a pattern `p`, implement regular expression matching with support for `'.'` and `'*'` where:\n\n* `'.'` Matches any single character.​​​​\n* `'*'` Matches zero or more of the preceding element.\n\nThe matching should cover the **entire** input string (not partial).\n\n**Example 1:**\n\n```\nInput: s = \"aa\", p = \"a\"\nOutput: false\nExplanation: \"a\" does not match the entire string \"aa\".\n```\n\n**Example 2:**\n\n```\nInput: s = \"aa\", p = \"a*\"\nOutput: true\nExplanation: '*' means zero or more of the preceding element, 'a'. Therefore, by repeating 'a' once, it becomes \"aa\".\n```\n\n**Example 3:**\n\n```\nInput: s = \"ab\", p = \".*\"\nOutput: true\nExplanation: \".*\" means \"zero or more (*) of any character (.)\".\n```\n\n**Constraints:**\n\n* `1 <= s.length <= 20`\n* `1 <= p.length <= 20`\n* `s` contains only lowercase English letters.\n* `p` contains only lowercase English letters, `'.'`, and `'*'`.\n* It is guaranteed for each appearance of the character `'*'`, there will be a previous valid character to match.",
+    "starter_code": "class Solution:\n    def isMatch(self, s: str, p: str) -> bool:\n        ",
+    "test_case": "\"aa\"\n\"a\"",
+    "meta_data": "{ \n  \"name\": \"isMatch\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"p\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  }\n}",
+    "param_types": [
+      "string",
+      "string"
+    ],
+    "return_type": "boolean",
+    "test_cases": [
+      {
+        "input": [
+          "aa",
+          "a"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "aa",
+          "a*"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "ab",
+          ".*"
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Container With Most Water",
+    "difficulty": "Medium",
+    "topic": "Array",
+    "acRate": "57.4%",
+    "markdown_content": "You are given an integer array `height` of length `n`. There are `n` vertical lines drawn such that the two endpoints of the `ith` line are `(i, 0)` and `(i, height[i])`.\n\nFind two lines that together with the x-axis form a container, such that the container contains the most water.\n\nReturn *the maximum amount of water a container can store*.\n\n**Notice** that you may not slant the container.\n\n**Example 1:**\n\n![](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg)\n\n```\nInput: height = [1,8,6,2,5,4,8,3,7]\nOutput: 49\nExplanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.\n```\n\n**Example 2:**\n\n```\nInput: height = [1,1]\nOutput: 1\n```\n\n**Constraints:**\n\n* `n == height.length`\n* `2 <= n <= 105`\n* `0 <= height[i] <= 104`",
+    "starter_code": "class Solution:\n    def maxArea(self, height: List[int]) -> int:\n        ",
+    "test_case": "[1,8,6,2,5,4,8,3,7]",
+    "meta_data": "{\n  \"name\": \"maxArea\",\n  \"params\": [\n    {\n      \"name\": \"height\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer[]"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            8,
+            6,
+            2,
+            5,
+            4,
+            8,
+            3,
+            7
+          ]
+        ],
+        "expected": 49
+      },
+      {
+        "input": [
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Integer to Roman",
+    "difficulty": "Medium",
+    "topic": "Hash Table",
+    "acRate": "68.1%",
+    "markdown_content": "Seven different symbols represent Roman numerals with the following values:\n\n| Symbol | Value |\n| --- | --- |\n| I | 1 |\n| V | 5 |\n| X | 10 |\n| L | 50 |\n| C | 100 |\n| D | 500 |\n| M | 1000 |\n\nRoman numerals are formed by appending the conversions of decimal place values from highest to lowest. Converting a decimal place value into a Roman numeral has the following rules:\n\n* If the value does not start with 4 or 9, select the symbol of the maximal value that can be subtracted from the input, append that symbol to the result, subtract its value, and convert the remainder to a Roman numeral.\n* If the value starts with 4 or 9 use the **subtractive form** representing one symbol subtracted from the following symbol, for example, 4 is 1 (`I`) less than 5 (`V`): `IV` and 9 is 1 (`I`) less than 10 (`X`): `IX`. Only the following subtractive forms are used: 4 (`IV`), 9 (`IX`), 40 (`XL`), 90 (`XC`), 400 (`CD`) and 900 (`CM`).\n* Only powers of 10 (`I`, `X`, `C`, `M`) can be appended consecutively at most 3 times to represent multiples of 10. You cannot append 5 (`V`), 50 (`L`), or 500 (`D`) multiple times. If you need to append a symbol 4 times use the **subtractive form**.\n\nGiven an integer, convert it to a Roman numeral.\n\n**Example 1:**\n\n**Input:** num = 3749\n\n**Output:** \"MMMDCCXLIX\"\n\n**Explanation:**\n\n```\n3000 = MMM as 1000 (M) + 1000 (M) + 1000 (M)\n 700 = DCC as 500 (D) + 100 (C) + 100 (C)\n  40 = XL as 10 (X) less of 50 (L)\n   9 = IX as 1 (I) less of 10 (X)\nNote: 49 is not 1 (I) less of 50 (L) because the conversion is based on decimal places\n```\n\n**Example 2:**\n\n**Input:** num = 58\n\n**Output:** \"LVIII\"\n\n**Explanation:**\n\n```\n50 = L\n 8 = VIII\n```\n\n**Example 3:**\n\n**Input:** num = 1994\n\n**Output:** \"MCMXCIV\"\n\n**Explanation:**\n\n```\n1000 = M\n 900 = CM\n  90 = XC\n   4 = IV\n```\n\n**Constraints:**\n\n* `1 <= num <= 3999`",
+    "starter_code": "class Solution:\n    def intToRoman(self, num: int) -> str:\n        ",
+    "test_case": "3749",
+    "meta_data": "{\n  \"name\": \"intToRoman\",\n  \"params\": [\n    {\n      \"name\": \"num\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"string\"\n  }\n}",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "string",
+    "test_cases": []
+  },
+  {
+    "id": 13,
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "topic": "Hash Table",
+    "acRate": "64.4%",
+    "markdown_content": "Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.\n\n```\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n```\n\nFor example, `2` is written as `II` in Roman numeral, just two ones added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:\n\n* `I` can be placed before `V` (5) and `X` (10) to make 4 and 9.\n* `X` can be placed before `L` (50) and `C` (100) to make 40 and 90.\n* `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n**Example 1:**\n\n```\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n```\n\n**Example 2:**\n\n```\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n```\n\n**Example 3:**\n\n```\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n```\n\n**Constraints:**\n\n* `1 <= s.length <= 15`\n* `s` contains only the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.\n* It is **guaranteed** that `s` is a valid roman numeral in the range `[1, 3999]`.",
+    "starter_code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        ",
+    "test_case": "\"III\"",
+    "meta_data": "{ \n  \"name\": \"romanToInt\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          "III"
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          "LVIII"
+        ],
+        "expected": 58
+      },
+      {
+        "input": [
+          "MCMXCIV"
+        ],
+        "expected": 1994
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "topic": "String",
+    "acRate": "45.1%",
+    "markdown_content": "Write a function to find the longest common prefix string amongst an array of strings.\n\nIf there is no common prefix, return an empty string `\"\"`.\n\n**Example 1:**\n\n```\nInput: strs = [\"flower\",\"flow\",\"flight\"]\nOutput: \"fl\"\n```\n\n**Example 2:**\n\n```\nInput: strs = [\"dog\",\"racecar\",\"car\"]\nOutput: \"\"\nExplanation: There is no common prefix among the input strings.\n```\n\n**Constraints:**\n\n* `1 <= strs.length <= 200`\n* `0 <= strs[i].length <= 200`\n* `strs[i]` consists of only lowercase English letters if it is non-empty.",
+    "starter_code": "class Solution:\n    def longestCommonPrefix(self, strs: List[str]) -> str:\n        ",
+    "test_case": "[\"flower\",\"flow\",\"flight\"]",
+    "meta_data": "{\n  \"name\": \"longestCommonPrefix\",\n  \"params\": [\n    {\n      \"name\": \"strs\",\n      \"type\": \"string[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"string\"\n  }\n}",
+    "param_types": [
+      "string[]"
+    ],
+    "return_type": "string",
+    "test_cases": [
+      {
+        "input": [
+          [
+            "flower",
+            "flow",
+            "flight"
+          ]
+        ],
+        "expected": "fl"
+      },
+      {
+        "input": [
+          [
+            "dog",
+            "racecar",
+            "car"
+          ]
+        ],
+        "expected": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "3Sum",
+    "difficulty": "Medium",
+    "topic": "Array",
+    "acRate": "36.7%",
+    "markdown_content": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.\n\n**Example 1:**\n\n```\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n```\n\n**Example 2:**\n\n```\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n```\n\n**Example 3:**\n\n```\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n```\n\n**Constraints:**\n\n* `3 <= nums.length <= 3000`\n* `-105 <= nums[i] <= 105`",
+    "starter_code": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        ",
+    "test_case": "[-1,0,1,2,-1,-4]",
+    "meta_data": "{\n  \"name\": \"threeSum\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<list<integer>>\",\n    \"colsize\": 3,\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "integer[]"
+    ],
+    "return_type": "list<list<integer>>",
+    "test_cases": [
+      {
+        "input": [
+          [
+            -1,
+            0,
+            1,
+            2,
+            -1,
+            -4
+          ]
+        ],
+        "expected": [
+          [
+            -1,
+            -1,
+            2
+          ],
+          [
+            -1,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "3Sum Closest",
+    "difficulty": "Medium",
+    "topic": "Array",
+    "acRate": "46.7%",
+    "markdown_content": "Given an integer array `nums` of length `n` and an integer `target`, find three integers in `nums` such that the sum is closest to `target`.\n\nReturn *the sum of the three integers*.\n\nYou may assume that each input would have exactly one solution.\n\n**Example 1:**\n\n```\nInput: nums = [-1,2,1,-4], target = 1\nOutput: 2\nExplanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).\n```\n\n**Example 2:**\n\n```\nInput: nums = [0,0,0], target = 1\nOutput: 0\nExplanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).\n```\n\n**Constraints:**\n\n* `3 <= nums.length <= 500`\n* `-1000 <= nums[i] <= 1000`\n* `-104 <= target <= 104`",
+    "starter_code": "class Solution:\n    def threeSumClosest(self, nums: List[int], target: int) -> int:\n        ",
+    "test_case": "[-1,2,1,-4]\n1",
+    "meta_data": "{\n  \"name\": \"threeSumClosest\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"target\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer[]",
+      "integer"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            -1,
+            2,
+            1,
+            -4
+          ],
+          1
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ],
+          1
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Letter Combinations of a Phone Number",
+    "difficulty": "Medium",
+    "topic": "Hash Table",
+    "acRate": "63.4%",
+    "markdown_content": "Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent. Return the answer in **any order**.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n![](https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png)\n\n**Example 1:**\n\n```\nInput: digits = \"23\"\nOutput: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n```\n\n**Example 2:**\n\n```\nInput: digits = \"\"\nOutput: []\n```\n\n**Example 3:**\n\n```\nInput: digits = \"2\"\nOutput: [\"a\",\"b\",\"c\"]\n```\n\n**Constraints:**\n\n* `0 <= digits.length <= 4`\n* `digits[i]` is a digit in the range `['2', '9']`.",
+    "starter_code": "class Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        ",
+    "test_case": "\"23\"",
+    "meta_data": "{ \n  \"name\": \"letterCombinations\",\n  \"params\": [\n    { \n      \"name\": \"digits\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<string>\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "list<string>",
+    "test_cases": [
+      {
+        "input": [
+          "23"
+        ],
+        "expected": [
+          "ad",
+          "ae",
+          "af",
+          "bd",
+          "be",
+          "bf",
+          "cd",
+          "ce",
+          "cf"
+        ]
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "2"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Remove Nth Node From End of List",
+    "difficulty": "Medium",
+    "topic": "Linked List",
+    "acRate": "48.4%",
+    "markdown_content": "Given the `head` of a linked list, remove the `nth` node from the end of the list and return its head.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg)\n\n```\nInput: head = [1,2,3,4,5], n = 2\nOutput: [1,2,3,5]\n```\n\n**Example 2:**\n\n```\nInput: head = [1], n = 1\nOutput: []\n```\n\n**Example 3:**\n\n```\nInput: head = [1,2], n = 1\nOutput: [1]\n```\n\n**Constraints:**\n\n* The number of nodes in the list is `sz`.\n* `1 <= sz <= 30`\n* `0 <= Node.val <= 100`\n* `1 <= n <= sz`\n\n**Follow up:** Could you do this in one pass?",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:\n        ",
+    "test_case": "[1,2,3,4,5]\n2",
+    "meta_data": "{\n  \"name\": \"removeNthFromEnd\",\n  \"params\": [\n    {\n      \"name\": \"head\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    },\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\",\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "ListNode",
+      "integer"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          1
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          1
+        ],
+        "expected": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "topic": "String",
+    "acRate": "42.0%",
+    "markdown_content": "Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.\n\nAn input string is valid if:\n\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n3. Every close bracket has a corresponding open bracket of the same type.\n\n**Example 1:**\n\n**Input:** s = \"()\"\n\n**Output:** true\n\n**Example 2:**\n\n**Input:** s = \"()[]{}\"\n\n**Output:** true\n\n**Example 3:**\n\n**Input:** s = \"(]\"\n\n**Output:** false\n\n**Example 4:**\n\n**Input:** s = \"([])\"\n\n**Output:** true\n\n**Constraints:**\n\n* `1 <= s.length <= 104`\n* `s` consists of parentheses only `'()[]{}'`.",
+    "starter_code": "class Solution:\n    def isValid(self, s: str) -> bool:\n        ",
+    "test_case": "\"()\"",
+    "meta_data": "{ \n  \"name\": \"isValid\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "boolean",
+    "test_cases": []
+  },
+  {
+    "id": 21,
+    "title": "Merge Two Sorted Lists",
+    "difficulty": "Easy",
+    "topic": "Linked List",
+    "acRate": "66.5%",
+    "markdown_content": "You are given the heads of two sorted linked lists `list1` and `list2`.\n\nMerge the two lists into one **sorted** list. The list should be made by splicing together the nodes of the first two lists.\n\nReturn *the head of the merged linked list*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg)\n\n```\nInput: list1 = [1,2,4], list2 = [1,3,4]\nOutput: [1,1,2,3,4,4]\n```\n\n**Example 2:**\n\n```\nInput: list1 = [], list2 = []\nOutput: []\n```\n\n**Example 3:**\n\n```\nInput: list1 = [], list2 = [0]\nOutput: [0]\n```\n\n**Constraints:**\n\n* The number of nodes in both lists is in the range `[0, 50]`.\n* `-100 <= Node.val <= 100`\n* Both `list1` and `list2` are sorted in **non-decreasing** order.",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:\n        ",
+    "test_case": "[1,2,4]\n[1,3,4]",
+    "meta_data": "{\n  \"name\": \"mergeTwoLists\",\n  \"params\": [\n    {\n      \"name\": \"list1\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    },\n    {\n      \"name\": \"list2\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\",\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "ListNode",
+      "ListNode"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [],
+          [
+            0
+          ]
+        ],
+        "expected": [
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Generate Parentheses",
+    "difficulty": "Medium",
+    "topic": "String",
+    "acRate": "76.8%",
+    "markdown_content": "Given `n` pairs of parentheses, write a function to *generate all combinations of well-formed parentheses*.\n\n**Example 1:**\n\n```\nInput: n = 3\nOutput: [\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]\n```\n\n**Example 2:**\n\n```\nInput: n = 1\nOutput: [\"()\"]\n```\n\n**Constraints:**\n\n* `1 <= n <= 8`",
+    "starter_code": "class Solution:\n    def generateParenthesis(self, n: int) -> List[str]:\n        ",
+    "test_case": "3",
+    "meta_data": "{\n  \"name\": \"generateParenthesis\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<string>\"\n  }\n}",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "list<string>",
+    "test_cases": [
+      {
+        "input": [
+          3
+        ],
+        "expected": [
+          "((()))",
+          "(()())",
+          "(())()",
+          "()(())",
+          "()()()"
+        ]
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": [
+          "()"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Merge k Sorted Lists",
+    "difficulty": "Hard",
+    "topic": "Linked List",
+    "acRate": "56.2%",
+    "markdown_content": "You are given an array of `k` linked-lists `lists`, each linked-list is sorted in ascending order.\n\n*Merge all the linked-lists into one sorted linked-list and return it.*\n\n**Example 1:**\n\n```\nInput: lists = [[1,4,5],[1,3,4],[2,6]]\nOutput: [1,1,2,3,4,4,5,6]\nExplanation: The linked-lists are:\n[\n  1->4->5,\n  1->3->4,\n  2->6\n]\nmerging them into one sorted list:\n1->1->2->3->4->4->5->6\n```\n\n**Example 2:**\n\n```\nInput: lists = []\nOutput: []\n```\n\n**Example 3:**\n\n```\nInput: lists = [[]]\nOutput: []\n```\n\n**Constraints:**\n\n* `k == lists.length`\n* `0 <= k <= 104`\n* `0 <= lists[i].length <= 500`\n* `-104 <= lists[i][j] <= 104`\n* `lists[i]` is sorted in **ascending order**.\n* The sum of `lists[i].length` will not exceed `104`.",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:\n        ",
+    "test_case": "[[1,4,5],[1,3,4],[2,6]]",
+    "meta_data": "{\n  \"name\": \"mergeKLists\",\n  \"params\": [\n    {\n      \"name\": \"lists\",\n      \"type\": \"ListNode[]\",\n      \"dealloc\": false\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\",\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "ListNode[]"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            [
+              1,
+              4,
+              5
+            ],
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              2,
+              6
+            ]
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            []
+          ]
+        ],
+        "expected": []
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Swap Nodes in Pairs",
+    "difficulty": "Medium",
+    "topic": "Linked List",
+    "acRate": "66.8%",
+    "markdown_content": "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)\n\n**Example 1:**\n\n**Input:** head = [1,2,3,4]\n\n**Output:** [2,1,4,3]\n\n**Explanation:**\n\n![](https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg)\n\n**Example 2:**\n\n**Input:** head = []\n\n**Output:** []\n\n**Example 3:**\n\n**Input:** head = [1]\n\n**Output:** [1]\n\n**Example 4:**\n\n**Input:** head = [1,2,3]\n\n**Output:** [2,1,3]\n\n**Constraints:**\n\n* The number of nodes in the list is in the range `[0, 100]`.\n* `0 <= Node.val <= 100`",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        ",
+    "test_case": "[1,2,3,4]",
+    "meta_data": "{\n  \"name\": \"swapPairs\",\n  \"params\": [\n    {\n      \"name\": \"head\",\n      \"type\": \"ListNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\"\n  }\n}",
+    "param_types": [
+      "ListNode"
+    ],
+    "return_type": "ListNode",
+    "test_cases": []
+  },
+  {
+    "id": 25,
+    "title": "Reverse Nodes in k-Group",
+    "difficulty": "Hard",
+    "topic": "Linked List",
+    "acRate": "62.4%",
+    "markdown_content": "Given the `head` of a linked list, reverse the nodes of the list `k` at a time, and return *the modified list*.\n\n`k` is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of `k` then left-out nodes, in the end, should remain as it is.\n\nYou may not alter the values in the list's nodes, only nodes themselves may be changed.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/03/reverse_ex1.jpg)\n\n```\nInput: head = [1,2,3,4,5], k = 2\nOutput: [2,1,4,3,5]\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2020/10/03/reverse_ex2.jpg)\n\n```\nInput: head = [1,2,3,4,5], k = 3\nOutput: [3,2,1,4,5]\n```\n\n**Constraints:**\n\n* The number of nodes in the list is `n`.\n* `1 <= k <= n <= 5000`\n* `0 <= Node.val <= 1000`\n\n**Follow-up:** Can you solve the problem in `O(1)` extra memory space?",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\n        ",
+    "test_case": "[1,2,3,4,5]\n2",
+    "meta_data": "{\n  \"name\": \"reverseKGroup\",\n  \"params\": [\n    {\n      \"name\": \"head\",\n      \"type\": \"ListNode\"\n    },\n    {\n      \"name\": \"k\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\"\n  }\n}",
+    "param_types": [
+      "ListNode",
+      "integer"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": [
+          2,
+          1,
+          4,
+          3,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          3
+        ],
+        "expected": [
+          3,
+          2,
+          1,
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Remove Duplicates from Sorted Array",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "acRate": "59.8%",
+    "markdown_content": "Given an integer array `nums` sorted in **non-decreasing order**, remove the duplicates [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) such that each unique element appears only **once**. The **relative order** of the elements should be kept the **same**. Then return *the number of unique elements in* `nums`.\n\nConsider the number of unique elements of `nums` to be `k`, to get accepted, you need to do the following things:\n\n* Change the array `nums` such that the first `k` elements of `nums` contain the unique elements in the order they were present in `nums` initially. The remaining elements of `nums` are not important as well as the size of `nums`.\n* Return `k`.\n\n**Custom Judge:**\n\nThe judge will test your solution with the following code:\n\n```\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\n    assert nums[i] == expectedNums[i];\n}\n```\n\nIf all assertions pass, then your solution will be **accepted**.\n\n**Example 1:**\n\n```\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n```\n\n**Example 2:**\n\n```\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n```\n\n**Constraints:**\n\n* `1 <= nums.length <= 3 * 104`\n* `-100 <= nums[i] <= 100`\n* `nums` is sorted in **non-decreasing** order.",
+    "starter_code": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        ",
+    "test_case": "[1,1,2]",
+    "meta_data": "{\n  \"name\": \"removeDuplicates\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  },\n  \"output\": {\n    \"paramindex\": 0,\n    \"size\": \"ret\"\n  },\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"c\",\n    \"csharp\",\n    \"javascript\",\n    \"ruby\",\n    \"swift\",\n    \"golang\",\n    \"python3\",\n    \"scala\",\n    \"kotlin\",\n    \"rust\",\n    \"php\",\n    \"typescript\",\n    \"dart\"\n  ]\n}",
+    "param_types": [
+      "integer[]"
+    ],
+    "return_type": "integer",
+    "test_cases": []
+  },
+  {
+    "id": 27,
+    "title": "Remove Element",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "acRate": "59.7%",
+    "markdown_content": "Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return *the number of elements in* `nums` *which are not equal to* `val`.\n\nConsider the number of elements in `nums` which are not equal to `val` be `k`, to get accepted, you need to do the following things:\n\n* Change the array `nums` such that the first `k` elements of `nums` contain the elements which are not equal to `val`. The remaining elements of `nums` are not important as well as the size of `nums`.\n* Return `k`.\n\n**Custom Judge:**\n\nThe judge will test your solution with the following code:\n\n```\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n                            // It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i < actualLength; i++) {\n    assert nums[i] == expectedNums[i];\n}\n```\n\nIf all assertions pass, then your solution will be **accepted**.\n\n**Example 1:**\n\n```\nInput: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2,_,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n```\n\n**Example 2:**\n\n```\nInput: nums = [0,1,2,2,3,0,4,2], val = 2\nOutput: 5, nums = [0,1,4,0,3,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n```\n\n**Constraints:**\n\n* `0 <= nums.length <= 100`\n* `0 <= nums[i] <= 50`\n* `0 <= val <= 100`",
+    "starter_code": "class Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n        ",
+    "test_case": "[3,2,2,3]\n3",
+    "meta_data": "{\n  \"name\": \"removeElement\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"val\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  },\n  \"output\": {\n    \"paramindex\": 0,\n    \"size\": \"ret\"\n  }\n}",
+    "param_types": [
+      "integer[]",
+      "integer"
+    ],
+    "return_type": "integer",
+    "test_cases": []
+  },
+  {
+    "id": 30,
+    "title": "Substring with Concatenation of All Words",
+    "difficulty": "Hard",
+    "topic": "Hash Table",
+    "acRate": "32.9%",
+    "markdown_content": "You are given a string `s` and an array of strings `words`. All the strings of `words` are of **the same length**.\n\nA **concatenated string** is a string that exactly contains all the strings of any permutation of `words` concatenated.\n\n* For example, if `words = [\"ab\",\"cd\",\"ef\"]`, then `\"abcdef\"`, `\"abefcd\"`, `\"cdabef\"`, `\"cdefab\"`, `\"efabcd\"`, and `\"efcdab\"` are all concatenated strings. `\"acdbef\"` is not a concatenated string because it is not the concatenation of any permutation of `words`.\n\nReturn an array of *the starting indices* of all the concatenated substrings in `s`. You can return the answer in **any order**.\n\n**Example 1:**\n\n**Input:** s = \"barfoothefoobarman\", words = [\"foo\",\"bar\"]\n\n**Output:** [0,9]\n\n**Explanation:**\n\nThe substring starting at 0 is `\"barfoo\"`. It is the concatenation of `[\"bar\",\"foo\"]` which is a permutation of `words`.  \nThe substring starting at 9 is `\"foobar\"`. It is the concatenation of `[\"foo\",\"bar\"]` which is a permutation of `words`.\n\n**Example 2:**\n\n**Input:** s = \"wordgoodgoodgoodbestword\", words = [\"word\",\"good\",\"best\",\"word\"]\n\n**Output:** []\n\n**Explanation:**\n\nThere is no concatenated substring.\n\n**Example 3:**\n\n**Input:** s = \"barfoofoobarthefoobarman\", words = [\"bar\",\"foo\",\"the\"]\n\n**Output:** [6,9,12]\n\n**Explanation:**\n\nThe substring starting at 6 is `\"foobarthe\"`. It is the concatenation of `[\"foo\",\"bar\",\"the\"]`.  \nThe substring starting at 9 is `\"barthefoo\"`. It is the concatenation of `[\"bar\",\"the\",\"foo\"]`.  \nThe substring starting at 12 is `\"thefoobar\"`. It is the concatenation of `[\"the\",\"foo\",\"bar\"]`.\n\n**Constraints:**\n\n* `1 <= s.length <= 104`\n* `1 <= words.length <= 5000`\n* `1 <= words[i].length <= 30`\n* `s` and `words[i]` consist of lowercase English letters.",
+    "starter_code": "class Solution:\n    def findSubstring(self, s: str, words: List[str]) -> List[int]:\n        ",
+    "test_case": "\"barfoothefoobarman\"\n[\"foo\",\"bar\"]",
+    "meta_data": "{\n  \"name\": \"findSubstring\",\n  \"params\": [\n    {\n      \"name\": \"s\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"words\",\n      \"type\": \"string[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<integer>\"\n  }\n}",
+    "param_types": [
+      "string",
+      "string[]"
+    ],
+    "return_type": "list<integer>",
+    "test_cases": []
+  },
+  {
+    "id": 32,
+    "title": "Longest Valid Parentheses",
+    "difficulty": "Hard",
+    "topic": "String",
+    "acRate": "35.9%",
+    "markdown_content": "Given a string containing just the characters `'('` and `')'`, return *the length of the longest valid (well-formed) parentheses* *substring*.\n\n**Example 1:**\n\n```\nInput: s = \"(()\"\nOutput: 2\nExplanation: The longest valid parentheses substring is \"()\".\n```\n\n**Example 2:**\n\n```\nInput: s = \")()())\"\nOutput: 4\nExplanation: The longest valid parentheses substring is \"()()\".\n```\n\n**Example 3:**\n\n```\nInput: s = \"\"\nOutput: 0\n```\n\n**Constraints:**\n\n* `0 <= s.length <= 3 * 104`\n* `s[i]` is `'('`, or `')'`.",
+    "starter_code": "class Solution:\n    def longestValidParentheses(self, s: str) -> int:\n        ",
+    "test_case": "\"(()\"",
+    "meta_data": "{ \n  \"name\": \"longestValidParentheses\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          "(()"
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          ")()())"
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Sudoku Solver",
+    "difficulty": "Hard",
+    "topic": "Array",
+    "acRate": "63.7%",
+    "markdown_content": "Write a program to solve a Sudoku puzzle by filling the empty cells.\n\nA sudoku solution must satisfy **all of the following rules**:\n\n1. Each of the digits `1-9` must occur exactly once in each row.\n2. Each of the digits `1-9` must occur exactly once in each column.\n3. Each of the digits `1-9` must occur exactly once in each of the 9 `3x3` sub-boxes of the grid.\n\nThe `'.'` character indicates empty cells.\n\n**Example 1:**\n\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png)\n\n```\nInput: board = [[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"],[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"],[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"],[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"],[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"],[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"],[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"],[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"],[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]\nOutput: [[\"5\",\"3\",\"4\",\"6\",\"7\",\"8\",\"9\",\"1\",\"2\"],[\"6\",\"7\",\"2\",\"1\",\"9\",\"5\",\"3\",\"4\",\"8\"],[\"1\",\"9\",\"8\",\"3\",\"4\",\"2\",\"5\",\"6\",\"7\"],[\"8\",\"5\",\"9\",\"7\",\"6\",\"1\",\"4\",\"2\",\"3\"],[\"4\",\"2\",\"6\",\"8\",\"5\",\"3\",\"7\",\"9\",\"1\"],[\"7\",\"1\",\"3\",\"9\",\"2\",\"4\",\"8\",\"5\",\"6\"],[\"9\",\"6\",\"1\",\"5\",\"3\",\"7\",\"2\",\"8\",\"4\"],[\"2\",\"8\",\"7\",\"4\",\"1\",\"9\",\"6\",\"3\",\"5\"],[\"3\",\"4\",\"5\",\"2\",\"8\",\"6\",\"1\",\"7\",\"9\"]]\nExplanation: The input board is shown above and the only valid solution is shown below:\n\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_solution.svg/250px-Sudoku-by-L2G-20050714_solution.svg.png)\n```\n\n**Constraints:**\n\n* `board.length == 9`\n* `board[i].length == 9`\n* `board[i][j]` is a digit or `'.'`.\n* It is **guaranteed** that the input board has only one solution.",
+    "starter_code": "class Solution:\n    def solveSudoku(self, board: List[List[str]]) -> None:\n        \"\"\"\n        Do not return anything, modify board in-place instead.\n        \"\"\"\n        ",
+    "test_case": "[[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"],[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"],[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"],[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"],[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"],[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"],[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"],[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"],[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]",
+    "meta_data": "{\n  \"name\": \"solveSudoku\",\n  \"params\": [\n    {\n      \"name\": \"board\",\n      \"type\": \"character[][]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"void\"\n  },\n  \"output\": {\n    \"paramindex\": 0\n  }\n}",
+    "param_types": [
+      "character[][]"
+    ],
+    "return_type": "void",
+    "test_cases": [
+      {
+        "input": [
+          [
+            [
+              "5",
+              "3",
+              ".",
+              ".",
+              "7",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              "6",
+              ".",
+              ".",
+              "1",
+              "9",
+              "5",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              "9",
+              "8",
+              ".",
+              ".",
+              ".",
+              ".",
+              "6",
+              "."
+            ],
+            [
+              "8",
+              ".",
+              ".",
+              ".",
+              "6",
+              ".",
+              ".",
+              ".",
+              "3"
+            ],
+            [
+              "4",
+              ".",
+              ".",
+              "8",
+              ".",
+              "3",
+              ".",
+              ".",
+              "1"
+            ],
+            [
+              "7",
+              ".",
+              ".",
+              ".",
+              "2",
+              ".",
+              ".",
+              ".",
+              "6"
+            ],
+            [
+              ".",
+              "6",
+              ".",
+              ".",
+              ".",
+              ".",
+              "2",
+              "8",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              "4",
+              "1",
+              "9",
+              ".",
+              ".",
+              "5"
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              "8",
+              ".",
+              ".",
+              "7",
+              "9"
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            "5",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9",
+            "1",
+            "2"
+          ],
+          [
+            "6",
+            "7",
+            "2",
+            "1",
+            "9",
+            "5",
+            "3",
+            "4",
+            "8"
+          ],
+          [
+            "1",
+            "9",
+            "8",
+            "3",
+            "4",
+            "2",
+            "5",
+            "6",
+            "7"
+          ],
+          [
+            "8",
+            "5",
+            "9",
+            "7",
+            "6",
+            "1",
+            "4",
+            "2",
+            "3"
+          ],
+          [
+            "4",
+            "2",
+            "6",
+            "8",
+            "5",
+            "3",
+            "7",
+            "9",
+            "1"
+          ],
+          [
+            "7",
+            "1",
+            "3",
+            "9",
+            "2",
+            "4",
+            "8",
+            "5",
+            "6"
+          ],
+          [
+            "9",
+            "6",
+            "1",
+            "5",
+            "3",
+            "7",
+            "2",
+            "8",
+            "4"
+          ],
+          [
+            "2",
+            "8",
+            "7",
+            "4",
+            "1",
+            "9",
+            "6",
+            "3",
+            "5"
+          ],
+          [
+            "3",
+            "4",
+            "5",
+            "2",
+            "8",
+            "6",
+            "1",
+            "7",
+            "9"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "First Missing Positive",
+    "difficulty": "Hard",
+    "topic": "Array",
+    "acRate": "40.8%",
+    "markdown_content": "Given an unsorted integer array `nums`. Return the *smallest positive integer* that is *not present* in `nums`.\n\nYou must implement an algorithm that runs in `O(n)` time and uses `O(1)` auxiliary space.\n\n**Example 1:**\n\n```\nInput: nums = [1,2,0]\nOutput: 3\nExplanation: The numbers in the range [1,2] are all in the array.\n```\n\n**Example 2:**\n\n```\nInput: nums = [3,4,-1,1]\nOutput: 2\nExplanation: 1 is in the array but 2 is missing.\n```\n\n**Example 3:**\n\n```\nInput: nums = [7,8,9,11,12]\nOutput: 1\nExplanation: The smallest positive integer 1 is missing.\n```\n\n**Constraints:**\n\n* `1 <= nums.length <= 105`\n* `-231 <= nums[i] <= 231 - 1`",
+    "starter_code": "class Solution:\n    def firstMissingPositive(self, nums: List[int]) -> int:\n        ",
+    "test_case": "[1,2,0]",
+    "meta_data": "{\n  \"name\": \"firstMissingPositive\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer[]"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            0
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            3,
+            4,
+            -1,
+            1
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            7,
+            8,
+            9,
+            11,
+            12
+          ]
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Wildcard Matching",
+    "difficulty": "Hard",
+    "topic": "String",
+    "acRate": "29.5%",
+    "markdown_content": "Given an input string (`s`) and a pattern (`p`), implement wildcard pattern matching with support for `'?'` and `'*'` where:\n\n* `'?'` Matches any single character.\n* `'*'` Matches any sequence of characters (including the empty sequence).\n\nThe matching should cover the **entire** input string (not partial).\n\n**Example 1:**\n\n```\nInput: s = \"aa\", p = \"a\"\nOutput: false\nExplanation: \"a\" does not match the entire string \"aa\".\n```\n\n**Example 2:**\n\n```\nInput: s = \"aa\", p = \"*\"\nOutput: true\nExplanation: '*' matches any sequence.\n```\n\n**Example 3:**\n\n```\nInput: s = \"cb\", p = \"?a\"\nOutput: false\nExplanation: '?' matches 'c', but the second letter is 'a', which does not match 'b'.\n```\n\n**Constraints:**\n\n* `0 <= s.length, p.length <= 2000`\n* `s` contains only lowercase English letters.\n* `p` contains only lowercase English letters, `'?'` or `'*'`.",
+    "starter_code": "class Solution:\n    def isMatch(self, s: str, p: str) -> bool:\n        ",
+    "test_case": "\"aa\"\n\"a\"",
+    "meta_data": "{ \n  \"name\": \"isMatch\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    },\n    { \n      \"name\": \"p\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  }\n}",
+    "param_types": [
+      "string",
+      "string"
+    ],
+    "return_type": "boolean",
+    "test_cases": [
+      {
+        "input": [
+          "aa",
+          "a"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "aa",
+          "*"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "cb",
+          "?a"
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Length of Last Word",
+    "difficulty": "Easy",
+    "topic": "String",
+    "acRate": "55.8%",
+    "markdown_content": "Given a string `s` consisting of words and spaces, return *the length of the **last** word in the string.*\n\nA **word** is a maximal substring consisting of non-space characters only.\n\n**Example 1:**\n\n```\nInput: s = \"Hello World\"\nOutput: 5\nExplanation: The last word is \"World\" with length 5.\n```\n\n**Example 2:**\n\n```\nInput: s = \"   fly me   to   the moon  \"\nOutput: 4\nExplanation: The last word is \"moon\" with length 4.\n```\n\n**Example 3:**\n\n```\nInput: s = \"luffy is still joyboy\"\nOutput: 6\nExplanation: The last word is \"joyboy\" with length 6.\n```\n\n**Constraints:**\n\n* `1 <= s.length <= 104`\n* `s` consists of only English letters and spaces `' '`.\n* There will be at least one word in `s`.",
+    "starter_code": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        ",
+    "test_case": "\"Hello World\"",
+    "meta_data": "{ \n  \"name\": \"lengthOfLastWord\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "string"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          "Hello World"
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          "   fly me   to   the moon  "
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          "luffy is still joyboy"
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Minimum Window Substring",
+    "difficulty": "Hard",
+    "topic": "Hash Table",
+    "acRate": "44.9%",
+    "markdown_content": "Given two strings `s` and `t` of lengths `m` and `n` respectively, return *the **minimum window*** ***substring*** *of* `s` *such that every character in* `t` *(**including duplicates**) is included in the window*. If there is no such substring, return *the empty string* `\"\"`.\n\nThe testcases will be generated such that the answer is **unique**.\n\n**Example 1:**\n\n```\nInput: s = \"ADOBECODEBANC\", t = \"ABC\"\nOutput: \"BANC\"\nExplanation: The minimum window substring \"BANC\" includes 'A', 'B', and 'C' from string t.\n```\n\n**Example 2:**\n\n```\nInput: s = \"a\", t = \"a\"\nOutput: \"a\"\nExplanation: The entire string s is the minimum window.\n```\n\n**Example 3:**\n\n```\nInput: s = \"a\", t = \"aa\"\nOutput: \"\"\nExplanation: Both 'a's from t must be included in the window.\nSince the largest window of s only has one 'a', return empty string.\n```\n\n**Constraints:**\n\n* `m == s.length`\n* `n == t.length`\n* `1 <= m, n <= 105`\n* `s` and `t` consist of uppercase and lowercase English letters.\n\n**Follow up:** Could you find an algorithm that runs in `O(m + n)` time?",
+    "starter_code": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        ",
+    "test_case": "\"ADOBECODEBANC\"\n\"ABC\"",
+    "meta_data": "{ \n  \"name\": \"minWindow\",\n  \"params\": [\n    { \n      \"name\": \"s\",\n      \"type\": \"string\"\n    },\n    { \n      \"name\": \"t\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"string\"\n  }\n}",
+    "param_types": [
+      "string",
+      "string"
+    ],
+    "return_type": "string",
+    "test_cases": [
+      {
+        "input": [
+          "ADOBECODEBANC",
+          "ABC"
+        ],
+        "expected": "BANC"
+      },
+      {
+        "input": [
+          "a",
+          "a"
+        ],
+        "expected": "a"
+      },
+      {
+        "input": [
+          "a",
+          "aa"
+        ],
+        "expected": ""
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Remove Duplicates from Sorted List",
+    "difficulty": "Easy",
+    "topic": "Linked List",
+    "acRate": "54.5%",
+    "markdown_content": "Given the `head` of a sorted linked list, *delete all duplicates such that each element appears only once*. Return *the linked list **sorted** as well*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/01/04/list1.jpg)\n\n```\nInput: head = [1,1,2]\nOutput: [1,2]\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2021/01/04/list2.jpg)\n\n```\nInput: head = [1,1,2,3,3]\nOutput: [1,2,3]\n```\n\n**Constraints:**\n\n* The number of nodes in the list is in the range `[0, 300]`.\n* `-100 <= Node.val <= 100`\n* The list is guaranteed to be **sorted** in ascending order.",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        ",
+    "test_case": "[1,1,2]",
+    "meta_data": "{\n  \"name\": \"deleteDuplicates\",\n  \"params\": [\n    {\n      \"name\": \"head\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\",\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "ListNode"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            2,
+            3,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "title": "Unique Binary Search Trees II",
+    "difficulty": "Medium",
+    "topic": "Dynamic Programming",
+    "acRate": "60.0%",
+    "markdown_content": "Given an integer `n`, return *all the structurally unique **BST'**s (binary search trees), which has exactly* `n` *nodes of unique values from* `1` *to* `n`. Return the answer in **any order**.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg)\n\n```\nInput: n = 3\nOutput: [[1,null,2,null,3],[1,null,3,2],[2,1,3],[3,1,null,null,2],[3,2,null,1]]\n```\n\n**Example 2:**\n\n```\nInput: n = 1\nOutput: [[1]]\n```\n\n**Constraints:**\n\n* `1 <= n <= 8`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def generateTrees(self, n: int) -> List[Optional[TreeNode]]:\n        ",
+    "test_case": "3",
+    "meta_data": "{\n  \"name\": \"generateTrees\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<TreeNode>\"\n  }\n}",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "list<TreeNode>",
+    "test_cases": [
+      {
+        "input": [
+          3
+        ],
+        "expected": [
+          [
+            1,
+            null,
+            2,
+            null,
+            3
+          ],
+          [
+            1,
+            null,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            3,
+            1,
+            null,
+            null,
+            2
+          ],
+          [
+            3,
+            2,
+            null,
+            1
+          ]
+        ]
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Validate Binary Search Tree",
+    "difficulty": "Medium",
+    "topic": "Tree",
+    "acRate": "34.1%",
+    "markdown_content": "Given the `root` of a binary tree, *determine if it is a valid binary search tree (BST)*.\n\nA **valid BST** is defined as follows:\n\n* The left subtree of a node contains only nodes with keys **less than** the node's key.\n* The right subtree of a node contains only nodes with keys **greater than** the node's key.\n* Both the left and right subtrees must also be binary search trees.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/12/01/tree1.jpg)\n\n```\nInput: root = [2,1,3]\nOutput: true\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2020/12/01/tree2.jpg)\n\n```\nInput: root = [5,1,4,null,null,3,6]\nOutput: false\nExplanation: The root node's value is 5 but its right child's value is 4.\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[1, 104]`.\n* `-231 <= Node.val <= 231 - 1`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def isValidBST(self, root: Optional[TreeNode]) -> bool:\n        ",
+    "test_case": "[2,1,3]",
+    "meta_data": "{\n  \"name\": \"isValidBST\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "boolean",
+    "test_cases": [
+      {
+        "input": [
+          [
+            2,
+            1,
+            3
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            5,
+            1,
+            4,
+            null,
+            null,
+            3,
+            6
+          ]
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Recover Binary Search Tree",
+    "difficulty": "Medium",
+    "topic": "Tree",
+    "acRate": "55.7%",
+    "markdown_content": "You are given the `root` of a binary search tree (BST), where the values of **exactly** two nodes of the tree were swapped by mistake. *Recover the tree without changing its structure*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg)\n\n```\nInput: root = [1,3,null,null,2]\nOutput: [3,1,null,null,2]\nExplanation: 3 cannot be a left child of 1 because 3 > 1. Swapping 1 and 3 makes the BST valid.\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg)\n\n```\nInput: root = [3,1,4,null,null,2]\nOutput: [2,1,4,null,null,3]\nExplanation: 2 cannot be in the right subtree of 3 because 2 < 3. Swapping 2 and 3 makes the BST valid.\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[2, 1000]`.\n* `-231 <= Node.val <= 231 - 1`\n\n**Follow up:** A solution using `O(n)` space is pretty straight-forward. Could you devise a constant `O(1)` space solution?",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def recoverTree(self, root: Optional[TreeNode]) -> None:\n        \"\"\"\n        Do not return anything, modify root in-place instead.\n        \"\"\"\n        ",
+    "test_case": "[1,3,null,null,2]",
+    "meta_data": "{\n  \"name\": \"recoverTree\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"void\"\n  },\n  \"output\": {\n    \"paramindex\": 0\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "void",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            null,
+            null,
+            2
+          ]
+        ],
+        "expected": [
+          3,
+          1,
+          null,
+          null,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            1,
+            4,
+            null,
+            null,
+            2
+          ]
+        ],
+        "expected": [
+          2,
+          1,
+          4,
+          null,
+          null,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "Same Tree",
+    "difficulty": "Easy",
+    "topic": "Tree",
+    "acRate": "64.7%",
+    "markdown_content": "Given the roots of two binary trees `p` and `q`, write a function to check if they are the same or not.\n\nTwo binary trees are considered the same if they are structurally identical, and the nodes have the same value.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/12/20/ex1.jpg)\n\n```\nInput: p = [1,2,3], q = [1,2,3]\nOutput: true\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2020/12/20/ex2.jpg)\n\n```\nInput: p = [1,2], q = [1,null,2]\nOutput: false\n```\n\n**Example 3:**\n\n![](https://assets.leetcode.com/uploads/2020/12/20/ex3.jpg)\n\n```\nInput: p = [1,2,1], q = [1,1,2]\nOutput: false\n```\n\n**Constraints:**\n\n* The number of nodes in both trees is in the range `[0, 100]`.\n* `-104 <= Node.val <= 104`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:\n        ",
+    "test_case": "[1,2,3]\n[1,2,3]",
+    "meta_data": "{\n  \"name\": \"isSameTree\",\n  \"params\": [\n    {\n      \"name\": \"p\",\n      \"type\": \"TreeNode\"\n    },\n    {\n      \"name\": \"q\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  }\n}",
+    "param_types": [
+      "TreeNode",
+      "TreeNode"
+    ],
+    "return_type": "boolean",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            null,
+            2
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "title": "Symmetric Tree",
+    "difficulty": "Easy",
+    "topic": "Tree",
+    "acRate": "58.9%",
+    "markdown_content": "Given the `root` of a binary tree, *check whether it is a mirror of itself* (i.e., symmetric around its center).\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg)\n\n```\nInput: root = [1,2,2,3,4,4,3]\nOutput: true\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg)\n\n```\nInput: root = [1,2,2,null,3,null,3]\nOutput: false\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[1, 1000]`.\n* `-100 <= Node.val <= 100`\n\n**Follow up:** Could you solve it both recursively and iteratively?",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def isSymmetric(self, root: Optional[TreeNode]) -> bool:\n        ",
+    "test_case": "[1,2,2,3,4,4,3]",
+    "meta_data": "{\n  \"name\": \"isSymmetric\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "boolean",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            3
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            null,
+            3,
+            null,
+            3
+          ]
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Binary Tree Level Order Traversal",
+    "difficulty": "Medium",
+    "topic": "Tree",
+    "acRate": "70.1%",
+    "markdown_content": "Given the `root` of a binary tree, return *the level order traversal of its nodes' values*. (i.e., from left to right, level by level).\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg)\n\n```\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]\n```\n\n**Example 2:**\n\n```\nInput: root = [1]\nOutput: [[1]]\n```\n\n**Example 3:**\n\n```\nInput: root = []\nOutput: []\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[0, 2000]`.\n* `-1000 <= Node.val <= 1000`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:\n        ",
+    "test_case": "[3,9,20,null,null,15,7]",
+    "meta_data": "{\n  \"name\": \"levelOrder\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<list<integer>>\",\n    \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "list<list<integer>>",
+    "test_cases": [
+      {
+        "input": [
+          [
+            3,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        ],
+        "expected": [
+          [
+            3
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            15,
+            7
+          ]
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Maximum Depth of Binary Tree",
+    "difficulty": "Easy",
+    "topic": "Tree",
+    "acRate": "76.9%",
+    "markdown_content": "Given the `root` of a binary tree, return *its maximum depth*.\n\nA binary tree's **maximum depth** is the number of nodes along the longest path from the root node down to the farthest leaf node.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg)\n\n```\nInput: root = [3,9,20,null,null,15,7]\nOutput: 3\n```\n\n**Example 2:**\n\n```\nInput: root = [1,null,2]\nOutput: 2\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[0, 104]`.\n* `-100 <= Node.val <= 100`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def maxDepth(self, root: Optional[TreeNode]) -> int:\n        ",
+    "test_case": "[3,9,20,null,null,15,7]",
+    "meta_data": "{\n  \"name\": \"maxDepth\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            3,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            null,
+            2
+          ]
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "title": "Binary Tree Maximum Path Sum",
+    "difficulty": "Hard",
+    "topic": "Dynamic Programming",
+    "acRate": "41.0%",
+    "markdown_content": "A **path** in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them. A node can only appear in the sequence **at most once**. Note that the path does not need to pass through the root.\n\nThe **path sum** of a path is the sum of the node's values in the path.\n\nGiven the `root` of a binary tree, return *the maximum **path sum** of any **non-empty** path*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/13/exx1.jpg)\n\n```\nInput: root = [1,2,3]\nOutput: 6\nExplanation: The optimal path is 2 -> 1 -> 3 with a path sum of 2 + 1 + 3 = 6.\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2020/10/13/exx2.jpg)\n\n```\nInput: root = [-10,9,20,null,null,15,7]\nOutput: 42\nExplanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[1, 3 * 104]`.\n* `-1000 <= Node.val <= 1000`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def maxPathSum(self, root: Optional[TreeNode]) -> int:\n        ",
+    "test_case": "[1,2,3]",
+    "meta_data": "{\n  \"name\": \"maxPathSum\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            -10,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        ],
+        "expected": 42
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "title": "Word Ladder II",
+    "difficulty": "Hard",
+    "topic": "Hash Table",
+    "acRate": "27.1%",
+    "markdown_content": "A **transformation sequence** from word `beginWord` to word `endWord` using a dictionary `wordList` is a sequence of words `beginWord -> s1 -> s2 -> ... -> sk` such that:\n\n* Every adjacent pair of words differs by a single letter.\n* Every `si` for `1 <= i <= k` is in `wordList`. Note that `beginWord` does not need to be in `wordList`.\n* `sk == endWord`\n\nGiven two words, `beginWord` and `endWord`, and a dictionary `wordList`, return *all the **shortest transformation sequences** from* `beginWord` *to* `endWord`*, or an empty list if no such sequence exists. Each sequence should be returned as a list of the words* `[beginWord, s1, s2, ..., sk]`.\n\n**Example 1:**\n\n```\nInput: beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]\nOutput: [[\"hit\",\"hot\",\"dot\",\"dog\",\"cog\"],[\"hit\",\"hot\",\"lot\",\"log\",\"cog\"]]\nExplanation: There are 2 shortest transformation sequences:\n\"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\"\n\"hit\" -> \"hot\" -> \"lot\" -> \"log\" -> \"cog\"\n```\n\n**Example 2:**\n\n```\nInput: beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]\nOutput: []\nExplanation: The endWord \"cog\" is not in wordList, therefore there is no valid transformation sequence.\n```\n\n**Constraints:**\n\n* `1 <= beginWord.length <= 5`\n* `endWord.length == beginWord.length`\n* `1 <= wordList.length <= 500`\n* `wordList[i].length == beginWord.length`\n* `beginWord`, `endWord`, and `wordList[i]` consist of lowercase English letters.\n* `beginWord != endWord`\n* All the words in `wordList` are **unique**.\n* The **sum** of all shortest transformation sequences does not exceed `105`.",
+    "starter_code": "class Solution:\n    def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:\n        ",
+    "test_case": "\"hit\"\n\"cog\"\n[\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+    "meta_data": "{\n  \"name\": \"findLadders\",\n  \"params\": [\n    {\n      \"name\": \"beginWord\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"endWord\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"wordList\",\n      \"type\": \"list<string>\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<list<string>>\"\n  }\n}",
+    "param_types": [
+      "string",
+      "string",
+      "list<string>"
+    ],
+    "return_type": "list<list<string>>",
+    "test_cases": [
+      {
+        "input": [
+          "hit",
+          "cog",
+          [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        ],
+        "expected": [
+          [
+            "hit",
+            "hot",
+            "dot",
+            "dog",
+            "cog"
+          ],
+          [
+            "hit",
+            "hot",
+            "lot",
+            "log",
+            "cog"
+          ]
+        ]
+      },
+      {
+        "input": [
+          "hit",
+          "cog",
+          [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        ],
+        "expected": []
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "title": "Linked List Cycle",
+    "difficulty": "Easy",
+    "topic": "Hash Table",
+    "acRate": "52.2%",
+    "markdown_content": "Given `head`, the head of a linked list, determine if the linked list has a cycle in it.\n\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the `next` pointer. Internally, `pos` is used to denote the index of the node that tail's `next` pointer is connected to. **Note that `pos` is not passed as a parameter**.\n\nReturn `true` *if there is a cycle in the linked list*. Otherwise, return `false`.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png)\n\n```\nInput: head = [3,2,0,-4], pos = 1\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png)\n\n```\nInput: head = [1,2], pos = 0\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 0th node.\n```\n\n**Example 3:**\n\n![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png)\n\n```\nInput: head = [1], pos = -1\nOutput: false\nExplanation: There is no cycle in the linked list.\n```\n\n**Constraints:**\n\n* The number of the nodes in the list is in the range `[0, 104]`.\n* `-105 <= Node.val <= 105`\n* `pos` is `-1` or a **valid index** in the linked-list.\n\n**Follow up:** Can you solve it using `O(1)` (i.e. constant) memory?",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\n        ",
+    "test_case": "[3,2,0,-4]\n1",
+    "meta_data": "{\n  \"name\": \"hasCycle\",\n  \"params\": [\n    {\n      \"name\": \"head\",\n      \"type\": \"ListNode\"\n    },\n    {\n      \"name\": \"pos\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  },\n  \"manual\": true,\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"c\",\n    \"csharp\",\n    \"javascript\",\n    \"ruby\",\n    \"swift\",\n    \"golang\",\n    \"python3\",\n    \"scala\",\n    \"kotlin\",\n    \"php\",\n    \"typescript\"\n  ]\n}",
+    "param_types": [
+      "ListNode",
+      "integer"
+    ],
+    "return_type": "boolean",
+    "test_cases": [
+      {
+        "input": [
+          [
+            3,
+            2,
+            0,
+            -4
+          ],
+          1
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          0
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          -1
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "title": "Intersection of Two Linked Lists",
+    "difficulty": "Easy",
+    "topic": "Hash Table",
+    "acRate": "60.6%",
+    "markdown_content": "Given the heads of two singly linked-lists `headA` and `headB`, return *the node at which the two lists intersect*. If the two linked lists have no intersection at all, return `null`.\n\nFor example, the following two linked lists begin to intersect at node `c1`:\n\n![](https://assets.leetcode.com/uploads/2021/03/05/160_statement.png)\n\nThe test cases are generated such that there are no cycles anywhere in the entire linked structure.\n\n**Note** that the linked lists must **retain their original structure** after the function returns.\n\n**Custom Judge:**\n\nThe inputs to the **judge** are given as follows (your program is **not** given these inputs):\n\n* `intersectVal` - The value of the node where the intersection occurs. This is `0` if there is no intersected node.\n* `listA` - The first linked list.\n* `listB` - The second linked list.\n* `skipA` - The number of nodes to skip ahead in `listA` (starting from the head) to get to the intersected node.\n* `skipB` - The number of nodes to skip ahead in `listB` (starting from the head) to get to the intersected node.\n\nThe judge will then create the linked structure based on these inputs and pass the two heads, `headA` and `headB` to your program. If you correctly return the intersected node, then your solution will be **accepted**.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/03/05/160_example_1_1.png)\n\n```\nInput: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3\nOutput: Intersected at '8'\nExplanation: The intersected node's value is 8 (note that this must not be 0 if the two lists intersect).\nFrom the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.\n- Note that the intersected node's value is not 1 because the nodes with value 1 in A and B (2nd node in A and 3rd node in B) are different node references. In other words, they point to two different locations in memory, while the nodes with value 8 in A and B (3rd node in A and 4th node in B) point to the same location in memory.\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2021/03/05/160_example_2.png)\n\n```\nInput: intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1\nOutput: Intersected at '2'\nExplanation: The intersected node's value is 2 (note that this must not be 0 if the two lists intersect).\nFrom the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.\n```\n\n**Example 3:**\n\n![](https://assets.leetcode.com/uploads/2021/03/05/160_example_3.png)\n\n```\nInput: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2\nOutput: No intersection\nExplanation: From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.\nExplanation: The two lists do not intersect, so return null.\n```\n\n**Constraints:**\n\n* The number of nodes of `listA` is in the `m`.\n* The number of nodes of `listB` is in the `n`.\n* `1 <= m, n <= 3 * 104`\n* `1 <= Node.val <= 105`\n* `0 <= skipA <= m`\n* `0 <= skipB <= n`\n* `intersectVal` is `0` if `listA` and `listB` do not intersect.\n* `intersectVal == listA[skipA] == listB[skipB]` if `listA` and `listB` intersect.\n\n**Follow up:** Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:\n        ",
+    "test_case": "8\n[4,1,8,4,5]\n[5,6,1,8,4,5]\n2\n3",
+    "meta_data": "{\n  \"name\": \"getIntersectionNode\",\n  \"params\": [\n    {\n      \"name\": \"intersectVal\",\n      \"type\": \"integer\"\n    },\n    {\n      \"name\": \"listA\",\n      \"type\": \"ListNode\"\n    },\n    {\n      \"name\": \"listB\",\n      \"type\": \"ListNode\"\n    },\n    {\n      \"name\": \"skipA\",\n      \"type\": \"integer\"\n    },\n    {\n      \"name\": \"skipB\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\"\n  },\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"c\",\n    \"csharp\",\n    \"javascript\",\n    \"golang\",\n    \"python3\",\n    \"swift\",\n    \"ruby\",\n    \"kotlin\",\n    \"scala\",\n    \"php\",\n    \"typescript\"\n  ],\n  \"manual\": true\n}",
+    "param_types": [
+      "integer",
+      "ListNode",
+      "ListNode",
+      "integer",
+      "integer"
+    ],
+    "return_type": "ListNode",
+    "test_cases": []
+  },
+  {
+    "id": 203,
+    "title": "Remove Linked List Elements",
+    "difficulty": "Easy",
+    "topic": "Linked List",
+    "acRate": "51.4%",
+    "markdown_content": "Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return *the new head*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg)\n\n```\nInput: head = [1,2,6,3,4,5,6], val = 6\nOutput: [1,2,3,4,5]\n```\n\n**Example 2:**\n\n```\nInput: head = [], val = 1\nOutput: []\n```\n\n**Example 3:**\n\n```\nInput: head = [7,7,7,7], val = 7\nOutput: []\n```\n\n**Constraints:**\n\n* The number of nodes in the list is in the range `[0, 104]`.\n* `1 <= Node.val <= 50`\n* `0 <= val <= 50`",
+    "starter_code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:\n        ",
+    "test_case": "[1,2,6,3,4,5,6]\n6",
+    "meta_data": "{\n  \"name\": \"removeElements\",\n  \"params\": [\n    {\n      \"name\": \"head\",\n      \"type\": \"ListNode\",\n      \"dealloc\": false\n    },\n    {\n      \"name\": \"val\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"ListNode\",\n     \"dealloc\": true\n  }\n}",
+    "param_types": [
+      "ListNode",
+      "integer"
+    ],
+    "return_type": "ListNode",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            6,
+            3,
+            4,
+            5,
+            6
+          ],
+          6
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            7,
+            7,
+            7,
+            7
+          ],
+          7
+        ],
+        "expected": []
+      }
+    ]
+  },
+  {
+    "id": 337,
+    "title": "House Robber III",
+    "difficulty": "Medium",
+    "topic": "Dynamic Programming",
+    "acRate": "54.8%",
+    "markdown_content": "The thief has found himself a new place for his thievery again. There is only one entrance to this area, called `root`.\n\nBesides the `root`, each house has one and only one parent house. After a tour, the smart thief realized that all houses in this place form a binary tree. It will automatically contact the police if **two directly-linked houses were broken into on the same night**.\n\nGiven the `root` of the binary tree, return *the maximum amount of money the thief can rob **without alerting the police***.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/03/10/rob1-tree.jpg)\n\n```\nInput: root = [3,2,3,null,3,null,1]\nOutput: 7\nExplanation: Maximum amount of money the thief can rob = 3 + 3 + 1 = 7.\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2021/03/10/rob2-tree.jpg)\n\n```\nInput: root = [3,4,5,1,3,null,1]\nOutput: 9\nExplanation: Maximum amount of money the thief can rob = 4 + 5 = 9.\n```\n\n**Constraints:**\n\n* The number of nodes in the tree is in the range `[1, 104]`.\n* `0 <= Node.val <= 104`",
+    "starter_code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def rob(self, root: Optional[TreeNode]) -> int:\n        ",
+    "test_case": "[3,2,3,null,3,null,1]",
+    "meta_data": "{\n  \"name\": \"rob\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "TreeNode"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            3,
+            2,
+            3,
+            null,
+            3,
+            null,
+            1
+          ]
+        ],
+        "expected": 7
+      },
+      {
+        "input": [
+          [
+            3,
+            4,
+            5,
+            1,
+            3,
+            null,
+            1
+          ]
+        ],
+        "expected": 9
+      }
+    ]
+  },
+  {
+    "id": 338,
+    "title": "Counting Bits",
+    "difficulty": "Easy",
+    "topic": "Dynamic Programming",
+    "acRate": "79.5%",
+    "markdown_content": "Given an integer `n`, return *an array* `ans` *of length* `n + 1` *such that for each* `i`(`0 <= i <= n`)*,* `ans[i]` *is the **number of*** `1`***'s** in the binary representation of* `i`.\n\n**Example 1:**\n\n```\nInput: n = 2\nOutput: [0,1,1]\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n```\n\n**Example 2:**\n\n```\nInput: n = 5\nOutput: [0,1,1,2,1,2]\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n3 --> 11\n4 --> 100\n5 --> 101\n```\n\n**Constraints:**\n\n* `0 <= n <= 105`\n\n**Follow up:**\n\n* It is very easy to come up with a solution with a runtime of `O(n log n)`. Can you do it in linear time `O(n)` and possibly in a single pass?\n* Can you do it without using any built-in function (i.e., like `__builtin_popcount` in C++)?",
+    "starter_code": "class Solution:\n    def countBits(self, n: int) -> List[int]:\n        ",
+    "test_case": "2",
+    "meta_data": "{\n  \"name\": \"countBits\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer[]\"\n  }\n}",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "integer[]",
+    "test_cases": [
+      {
+        "input": [
+          2
+        ],
+        "expected": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": [
+          0,
+          1,
+          1,
+          2,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": 397,
+    "title": "Integer Replacement",
+    "difficulty": "Medium",
+    "topic": "Dynamic Programming",
+    "acRate": "36.4%",
+    "markdown_content": "Given a positive integer `n`, you can apply one of the following operations:\n\n1. If `n` is even, replace `n` with `n / 2`.\n2. If `n` is odd, replace `n` with either `n + 1` or `n - 1`.\n\nReturn *the minimum number of operations needed for* `n` *to become* `1`.\n\n**Example 1:**\n\n```\nInput: n = 8\nOutput: 3\nExplanation: 8 -> 4 -> 2 -> 1\n```\n\n**Example 2:**\n\n```\nInput: n = 7\nOutput: 4\nExplanation: 7 -> 8 -> 4 -> 2 -> 1\nor 7 -> 6 -> 3 -> 2 -> 1\n```\n\n**Example 3:**\n\n```\nInput: n = 4\nOutput: 2\n```\n\n**Constraints:**\n\n* `1 <= n <= 231 - 1`",
+    "starter_code": "class Solution:\n    def integerReplacement(self, n: int) -> int:\n        ",
+    "test_case": "8",
+    "meta_data": "{\n  \"name\": \"integerReplacement\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          8
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 552,
+    "title": "Student Attendance Record II",
+    "difficulty": "Hard",
+    "topic": "Dynamic Programming",
+    "acRate": "55.7%",
+    "markdown_content": "An attendance record for a student can be represented as a string where each character signifies whether the student was absent, late, or present on that day. The record only contains the following three characters:\n\n* `'A'`: Absent.\n* `'L'`: Late.\n* `'P'`: Present.\n\nAny student is eligible for an attendance award if they meet **both** of the following criteria:\n\n* The student was absent (`'A'`) for **strictly** fewer than 2 days **total**.\n* The student was **never** late (`'L'`) for 3 or more **consecutive** days.\n\nGiven an integer `n`, return *the **number** of possible attendance records of length* `n` *that make a student eligible for an attendance award. The answer may be very large, so return it **modulo*** `109 + 7`.\n\n**Example 1:**\n\n```\nInput: n = 2\nOutput: 8\nExplanation: There are 8 records with length 2 that are eligible for an award:\n\"PP\", \"AP\", \"PA\", \"LP\", \"PL\", \"AL\", \"LA\", \"LL\"\nOnly \"AA\" is not eligible because there are 2 absences (there need to be fewer than 2).\n```\n\n**Example 2:**\n\n```\nInput: n = 1\nOutput: 3\n```\n\n**Example 3:**\n\n```\nInput: n = 10101\nOutput: 183236316\n```\n\n**Constraints:**\n\n* `1 <= n <= 105`",
+    "starter_code": "class Solution:\n    def checkRecord(self, n: int) -> int:\n        ",
+    "test_case": "2",
+    "meta_data": "{\n  \"name\": \"checkRecord\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}\n",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          2
+        ],
+        "expected": 8
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          10101
+        ],
+        "expected": 183236316
+      }
+    ]
+  },
+  {
+    "id": 600,
+    "title": "Non-negative Integers without Consecutive Ones",
+    "difficulty": "Hard",
+    "topic": "Dynamic Programming",
+    "acRate": "40.1%",
+    "markdown_content": "Given a positive integer `n`, return the number of the integers in the range `[0, n]` whose binary representations **do not** contain consecutive ones.\n\n**Example 1:**\n\n```\nInput: n = 5\nOutput: 5\nExplanation:\nHere are the non-negative integers <= 5 with their corresponding binary representations:\n0 : 0\n1 : 1\n2 : 10\n3 : 11\n4 : 100\n5 : 101\nAmong them, only integer 3 disobeys the rule (two consecutive ones) and the other 5 satisfy the rule.\n```\n\n**Example 2:**\n\n```\nInput: n = 1\nOutput: 2\n```\n\n**Example 3:**\n\n```\nInput: n = 2\nOutput: 3\n```\n\n**Constraints:**\n\n* `1 <= n <= 109`",
+    "starter_code": "class Solution:\n    def findIntegers(self, n: int) -> int:\n        ",
+    "test_case": "5",
+    "meta_data": "{\n  \"name\": \"findIntegers\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          2
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 1206,
+    "title": "Design Skiplist",
+    "difficulty": "Hard",
+    "topic": "Linked List",
+    "acRate": "61.8%",
+    "markdown_content": "Design a **Skiplist** without using any built-in libraries.\n\nA **skiplist** is a data structure that takes `O(log(n))` time to add, erase and search. Comparing with treap and red-black tree which has the same function and performance, the code length of Skiplist can be comparatively short and the idea behind Skiplists is just simple linked lists.\n\nFor example, we have a Skiplist containing `[30,40,50,60,70,90]` and we want to add `80` and `45` into it. The Skiplist works this way:\n\n![](https://assets.leetcode.com/uploads/2019/09/27/1506_skiplist.gif)  \nArtyom Kalinin [CC BY-SA 3.0], via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Skip_list_add_element-en.gif \"Artyom Kalinin [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons\")\n\nYou can see there are many layers in the Skiplist. Each layer is a sorted linked list. With the help of the top layers, add, erase and search can be faster than `O(n)`. It can be proven that the average time complexity for each operation is `O(log(n))` and space complexity is `O(n)`.\n\nSee more about Skiplist: <https://en.wikipedia.org/wiki/Skip_list>\n\nImplement the `Skiplist` class:\n\n* `Skiplist()` Initializes the object of the skiplist.\n* `bool search(int target)` Returns `true` if the integer `target` exists in the Skiplist or `false` otherwise.\n* `void add(int num)` Inserts the value `num` into the SkipList.\n* `bool erase(int num)` Removes the value `num` from the Skiplist and returns `true`. If `num` does not exist in the Skiplist, do nothing and return `false`. If there exist multiple `num` values, removing any one of them is fine.\n\nNote that duplicates may exist in the Skiplist, your code needs to handle this situation.\n\n**Example 1:**\n\n```\nInput\n[\"Skiplist\", \"add\", \"add\", \"add\", \"search\", \"add\", \"search\", \"erase\", \"erase\", \"search\"]\n[[], [1], [2], [3], [0], [4], [1], [0], [1], [1]]\nOutput\n[null, null, null, null, false, null, true, false, true, false]\n\nExplanation\nSkiplist skiplist = new Skiplist();\nskiplist.add(1);\nskiplist.add(2);\nskiplist.add(3);\nskiplist.search(0); // return False\nskiplist.add(4);\nskiplist.search(1); // return True\nskiplist.erase(0);  // return False, 0 is not in skiplist.\nskiplist.erase(1);  // return True\nskiplist.search(1); // return False, 1 has already been erased.\n```\n\n**Constraints:**\n\n* `0 <= num, target <= 2 * 104`\n* At most `5 * 104` calls will be made to `search`, `add`, and `erase`.",
+    "starter_code": "class Skiplist:\n\n    def __init__(self):\n        \n\n    def search(self, target: int) -> bool:\n        \n\n    def add(self, num: int) -> None:\n        \n\n    def erase(self, num: int) -> bool:\n        \n\n\n# Your Skiplist object will be instantiated and called as such:\n# obj = Skiplist()\n# param_1 = obj.search(target)\n# obj.add(num)\n# param_3 = obj.erase(num)",
+    "test_case": "[\"Skiplist\",\"add\",\"add\",\"add\",\"search\",\"add\",\"search\",\"erase\",\"erase\",\"search\"]\n[[],[1],[2],[3],[0],[4],[1],[0],[1],[1]]",
+    "meta_data": "{\n  \"classname\": \"Skiplist\",\n  \"maxbytesperline\": 160000,\n  \"constructor\": {\n    \"params\": []\n  },\n  \"methods\": [\n    {\n      \"params\": [\n        {\n          \"type\": \"integer\",\n          \"name\": \"target\"\n        }\n      ],\n      \"name\": \"search\",\n      \"return\": {\n        \"type\": \"boolean\"\n      }\n    },\n    {\n      \"params\": [\n        {\n          \"type\": \"integer\",\n          \"name\": \"num\"\n        }\n      ],\n      \"name\": \"add\",\n      \"return\": {\n        \"type\": \"void\"\n      }\n    },\n    {\n      \"params\": [\n        {\n          \"type\": \"integer\",\n          \"name\": \"num\"\n        }\n      ],\n      \"name\": \"erase\",\n      \"return\": {\n        \"type\": \"boolean\"\n      }\n    }\n  ],\n  \"return\": {\n    \"type\": \"boolean\"\n  },\n  \"systemdesign\": true\n}",
+    "param_types": [],
+    "return_type": "boolean",
+    "test_cases": []
+  },
+  {
+    "id": 1377,
+    "title": "Frog Position After T Seconds",
+    "difficulty": "Hard",
+    "topic": "Tree",
+    "acRate": "35.7%",
+    "markdown_content": "Given an undirected tree consisting of `n` vertices numbered from `1` to `n`. A frog starts jumping from **vertex 1**. In one second, the frog jumps from its current vertex to another **unvisited** vertex if they are directly connected. The frog can not jump back to a visited vertex. In case the frog can jump to several vertices, it jumps randomly to one of them with the same probability. Otherwise, when the frog can not jump to any unvisited vertex, it jumps forever on the same vertex.\n\nThe edges of the undirected tree are given in the array `edges`, where `edges[i] = [ai, bi]` means that exists an edge connecting the vertices `ai` and `bi`.\n\n*Return the probability that after `t` seconds the frog is on the vertex `target`.* Answers within `10-5` of the actual answer will be accepted.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2021/12/21/frog1.jpg)\n\n```\nInput: n = 7, edges = [[1,2],[1,3],[1,7],[2,4],[2,6],[3,5]], t = 2, target = 4\nOutput: 0.16666666666666666 \nExplanation: The figure above shows the given graph. The frog starts at vertex 1, jumping with 1/3 probability to the vertex 2 after second 1 and then jumping with 1/2 probability to vertex 4 after second 2. Thus the probability for the frog is on the vertex 4 after 2 seconds is 1/3 * 1/2 = 1/6 = 0.16666666666666666.\n```\n\n**Example 2:**\n\n**![](https://assets.leetcode.com/uploads/2021/12/21/frog2.jpg)**\n\n```\nInput: n = 7, edges = [[1,2],[1,3],[1,7],[2,4],[2,6],[3,5]], t = 1, target = 7\nOutput: 0.3333333333333333\nExplanation: The figure above shows the given graph. The frog starts at vertex 1, jumping with 1/3 = 0.3333333333333333 probability to the vertex 7 after second 1.\n```\n\n**Constraints:**\n\n* `1 <= n <= 100`\n* `edges.length == n - 1`\n* `edges[i].length == 2`\n* `1 <= ai, bi <= n`\n* `1 <= t <= 50`\n* `1 <= target <= n`",
+    "starter_code": "class Solution:\n    def frogPosition(self, n: int, edges: List[List[int]], t: int, target: int) -> float:\n        ",
+    "test_case": "7\n[[1,2],[1,3],[1,7],[2,4],[2,6],[3,5]]\n2\n4",
+    "meta_data": "{\n  \"name\": \"frogPosition\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    },\n    {\n      \"type\": \"integer[][]\",\n      \"name\": \"edges\"\n    },\n    {\n      \"type\": \"integer\",\n      \"name\": \"t\"\n    },\n    {\n      \"type\": \"integer\",\n      \"name\": \"target\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"double\"\n  }\n}",
+    "param_types": [
+      "integer",
+      "integer[][]",
+      "integer",
+      "integer"
+    ],
+    "return_type": "double",
+    "test_cases": [
+      {
+        "input": [
+          7,
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          2,
+          4
+        ],
+        "expected": 0.16666666666666666
+      },
+      {
+        "input": [
+          7,
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          1,
+          7
+        ],
+        "expected": 0.3333333333333333
+      }
+    ]
+  },
+  {
+    "id": 1719,
+    "title": "Number Of Ways To Reconstruct A Tree",
+    "difficulty": "Hard",
+    "topic": "Tree",
+    "acRate": "44.0%",
+    "markdown_content": "You are given an array `pairs`, where `pairs[i] = [xi, yi]`, and:\n\n* There are no duplicates.\n* `xi < yi`\n\nLet `ways` be the number of rooted trees that satisfy the following conditions:\n\n* The tree consists of nodes whose values appeared in `pairs`.\n* A pair `[xi, yi]` exists in `pairs` **if and only if** `xi` is an ancestor of `yi` or `yi` is an ancestor of `xi`.\n* **Note:** the tree does not have to be a binary tree.\n\nTwo ways are considered to be different if there is at least one node that has different parents in both ways.\n\nReturn:\n\n* `0` if `ways == 0`\n* `1` if `ways == 1`\n* `2` if `ways > 1`\n\nA **rooted tree** is a tree that has a single root node, and all edges are oriented to be outgoing from the root.\n\nAn **ancestor** of a node is any node on the path from the root to that node (excluding the node itself). The root has no ancestors.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/12/03/trees2.png)\n\n```\nInput: pairs = [[1,2],[2,3]]\nOutput: 1\nExplanation: There is exactly one valid rooted tree, which is shown in the above figure.\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2020/12/03/tree.png)\n\n```\nInput: pairs = [[1,2],[2,3],[1,3]]\nOutput: 2\nExplanation: There are multiple valid rooted trees. Three of them are shown in the above figures.\n```\n\n**Example 3:**\n\n```\nInput: pairs = [[1,2],[2,3],[2,4],[1,5]]\nOutput: 0\nExplanation: There are no valid rooted trees.\n```\n\n**Constraints:**\n\n* `1 <= pairs.length <= 105`\n* `1 <= xi < yi <= 500`\n* The elements in `pairs` are unique.",
+    "starter_code": "class Solution:\n    def checkWays(self, pairs: List[List[int]]) -> int:\n        ",
+    "test_case": "[[1,2],[2,3]]",
+    "meta_data": "{\n  \"name\": \"checkWays\",\n  \"params\": [\n    {\n      \"name\": \"pairs\",\n      \"type\": \"integer[][]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer[][]"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              5
+            ]
+          ]
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": 2872,
+    "title": "Maximum Number of K-Divisible Components",
+    "difficulty": "Hard",
+    "topic": "Tree",
+    "acRate": "69.8%",
+    "markdown_content": "There is an undirected tree with `n` nodes labeled from `0` to `n - 1`. You are given the integer `n` and a 2D integer array `edges` of length `n - 1`, where `edges[i] = [ai, bi]` indicates that there is an edge between nodes `ai` and `bi` in the tree.\n\nYou are also given a **0-indexed** integer array `values` of length `n`, where `values[i]` is the **value** associated with the `ith` node, and an integer `k`.\n\nA **valid split** of the tree is obtained by removing any set of edges, possibly empty, from the tree such that the resulting components all have values that are divisible by `k`, where the **value of a connected component** is the sum of the values of its nodes.\n\nReturn *the **maximum number of components** in any valid split*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2023/08/07/example12-cropped2svg.jpg)\n\n```\nInput: n = 5, edges = [[0,2],[1,2],[1,3],[2,4]], values = [1,8,1,4,4], k = 6\nOutput: 2\nExplanation: We remove the edge connecting node 1 with 2. The resulting split is valid because:\n- The value of the component containing nodes 1 and 3 is values[1] + values[3] = 12.\n- The value of the component containing nodes 0, 2, and 4 is values[0] + values[2] + values[4] = 6.\nIt can be shown that no other valid split has more than 2 connected components.\n```\n\n**Example 2:**\n\n![](https://assets.leetcode.com/uploads/2023/08/07/example21svg-1.jpg)\n\n```\nInput: n = 7, edges = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6]], values = [3,0,6,1,5,2,1], k = 3\nOutput: 3\nExplanation: We remove the edge connecting node 0 with 2, and the edge connecting node 0 with 1. The resulting split is valid because:\n- The value of the component containing node 0 is values[0] = 3.\n- The value of the component containing nodes 2, 5, and 6 is values[2] + values[5] + values[6] = 9.\n- The value of the component containing nodes 1, 3, and 4 is values[1] + values[3] + values[4] = 6.\nIt can be shown that no other valid split has more than 3 connected components.\n```\n\n**Constraints:**\n\n* `1 <= n <= 3 * 104`\n* `edges.length == n - 1`\n* `edges[i].length == 2`\n* `0 <= ai, bi < n`\n* `values.length == n`\n* `0 <= values[i] <= 109`\n* `1 <= k <= 109`\n* Sum of `values` is divisible by `k`.\n* The input is generated such that `edges` represents a valid tree.",
+    "starter_code": "class Solution:\n    def maxKDivisibleComponents(self, n: int, edges: List[List[int]], values: List[int], k: int) -> int:\n        ",
+    "test_case": "5\n[[0,2],[1,2],[1,3],[2,4]]\n[1,8,1,4,4]\n6",
+    "meta_data": "{\n  \"name\": \"maxKDivisibleComponents\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    },\n    {\n      \"type\": \"integer[][]\",\n      \"name\": \"edges\"\n    },\n    {\n      \"type\": \"integer[]\",\n      \"name\": \"values\"\n    },\n    {\n      \"type\": \"integer\",\n      \"name\": \"k\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+    "param_types": [
+      "integer",
+      "integer[][]",
+      "integer[]",
+      "integer"
+    ],
+    "return_type": "integer",
+    "test_cases": [
+      {
+        "input": [
+          5,
+          [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          [
+            1,
+            8,
+            1,
+            4,
+            4
+          ],
+          6
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          7,
+          [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          [
+            3,
+            0,
+            6,
+            1,
+            5,
+            2,
+            1
+          ],
+          3
+        ],
+        "expected": 3
+      }
+    ]
+  }
+]

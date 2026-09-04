@@ -1,0 +1,20 @@
+dataset/
+dataset_raw/
+dataset.zip
+__pycache__/
+*.pyc
+
+venv/
+venv311/
+env/
+.env
+.venv/
+
+.DS_Store
+node_modules/
+dist/
+
+# Training checkpoints are ignored by default, but the attention model the
+# server loads at startup must be committed or a fresh clone cannot run.
+*.pth
+!detection_models/attention_model_pretrained.pth
