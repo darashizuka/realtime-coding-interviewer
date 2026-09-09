@@ -226,22 +226,6 @@ detection_models/
 
 ---
 
-## Not implemented
-
-- **Animated avatar.** The interviewer is an emoji that scales while speaking.
-  `modules/avatar_gen.py` is a stub and is not imported. If you pick this up, a
-  viseme-driven 2D mouth off `SpeechSynthesisUtterance.onboundary` will hold
-  realtime; Wav2Lip and SadTalker will not.
-- **Persistence.** Sessions are in-memory and vanish on disconnect. Nothing is
-  saved between runs.
-- **Conversation memory.** Each spoken exchange is prompted independently. The
-  interviewer sees your current code but not the earlier back-and-forth, so it
-  will not reference something you said three turns ago.
-- **Multi-user.** Sessions are keyed by socket id and it has only been run
-  single-user.
-
----
-
 ## Troubleshooting
 
 | Symptom | Cause |
