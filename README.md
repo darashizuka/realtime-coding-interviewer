@@ -27,9 +27,8 @@ unreliable in Safari.
 
 ---
 
-## Is this full stack?
-
-Yes — and then some. It is a React SPA, a Python realtime backend, a computer
+## Diagram
+It is a React SPA, a Python realtime backend, a computer
 vision model, and an external LLM integration:
 
 ```
