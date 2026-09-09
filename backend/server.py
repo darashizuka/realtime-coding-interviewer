@@ -74,7 +74,12 @@ DISTRACTION_DECAY = 2
 NUDGE_COOLDOWN = 25          # seconds between nudges of any kind
 TYPING_GRACE = 5             # recent typing counts as focused regardless of gaze
 
-sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins="*")
+ALLOWED_ORIGINS = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:5173,https://realtime-coding-interviewer.vercel.app",
+).split(",")
+
+sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins=ALLOWED_ORIGINS)
 app = socketio.ASGIApp(sio)
 
 user_sessions = {}
