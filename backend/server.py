@@ -99,7 +99,7 @@ CRITICAL INSTRUCTIONS:
 4. Keep spoken responses short (under 2 sentences).
 5. DO NOT generate physical actions (e.g. *taps desk*, (looks at watch)). ONLY generate spoken words.
 6. DO NOT ask behavioral questions.
-7. Focus EXCLUSIVELY on the current coding problem.
+7. Stay on topic — answer questions about the current problem, but redirect unrelated conversation back to it.
 """
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -304,7 +304,7 @@ async def process_user_text(sid, data):
     {session['code']}
     User Question: {user_text}
     """
-    reply = await ask_llama_async(prompt, user_text)
+    reply = await ask_llama_async(prompt, user_text, max_tokens=300)
     session["transcript"].append(("interviewer", reply))
     log.info("Interviewer: %s", reply)
     await sio.emit("ai_text_response", {"text": reply}, to=sid)
