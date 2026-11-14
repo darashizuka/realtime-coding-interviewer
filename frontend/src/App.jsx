@@ -117,8 +117,6 @@ function App() {
 
   const speakText = useCallback((text) => {
     if (!window.speechSynthesis) return;
-    // Stop listening while the AI talks, otherwise the mic transcribes it and
-    // feeds the interviewer its own words.
     SpeechRecognition.stopListening();
     setIsAiSpeaking(true);
     window.speechSynthesis.cancel();
@@ -137,6 +135,15 @@ function App() {
     window.speechSynthesis.speak(utterance);
   }, []);
 
+  const speakNudge = useCallback((text) => {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const voices = window.speechSynthesis.getVoices();
+    utterance.voice = voices.find(v => v.lang.includes('en-US')) || voices[0];
+    utterance.volume = 0.7;
+    window.speechSynthesis.speak(utterance);
+  }, []);
+
   // --- 4. SOCKET LISTENERS ---
   useEffect(() => {
     socket.on('ai_text_response', (data) => {
@@ -147,6 +154,7 @@ function App() {
     socket.on('ai_nudge', (data) => {
       if (Date.now() - lastResponseTime.current < 8000) return;
       setAiLine({ text: data.message, kind: 'nudge' });
+      speakNudge(data.message);
       markActive();
     });
     socket.on('session_data', (data) => {
