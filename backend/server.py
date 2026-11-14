@@ -201,6 +201,8 @@ async def send_nudge(sid, session, situation):
     now = time.time()
     if (now - session["last_nudge_time"]) < NUDGE_COOLDOWN:
         return False
+    if (now - session.get("last_speech_time", 0)) < 10:
+        return False
     session["last_nudge_time"] = now
 
     prompt = f"{persona_for(session)}\n{UNIVERSAL_RULES}\n{situation}"
@@ -294,6 +296,8 @@ async def process_user_text(sid, data):
     user_text = data.get("text", "").strip()
     if not user_text:
         return
+    session["last_speech_time"] = time.time()
+    session["distraction_score"] = 0
     log.info("Candidate: %s", user_text)
     session["transcript"].append(("candidate", user_text))
 

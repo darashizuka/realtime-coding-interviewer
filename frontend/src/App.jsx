@@ -38,6 +38,7 @@ function App() {
   // What the interviewer last said. TTS alone is easy to miss, and if the
   // browser blocks speech the app looks dead, so mirror every line on screen.
   const [aiLine, setAiLine] = useState(null);   // { text, kind: 'speech' | 'nudge' }
+  const lastResponseTime = useRef(0);
 
   // SENSORS
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -139,10 +140,12 @@ function App() {
   // --- 4. SOCKET LISTENERS ---
   useEffect(() => {
     socket.on('ai_text_response', (data) => {
+      lastResponseTime.current = Date.now();
       setAiLine({ text: data.text, kind: 'speech' });
       speakText(data.text);
     });
     socket.on('ai_nudge', (data) => {
+      if (Date.now() - lastResponseTime.current < 8000) return;
       setAiLine({ text: data.message, kind: 'nudge' });
       speakText(data.message);
       markActive();
