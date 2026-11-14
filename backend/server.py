@@ -207,7 +207,6 @@ async def send_nudge(sid, session, situation):
 
     prompt = f"{persona_for(session)}\n{UNIVERSAL_RULES}\n{situation}"
     reply = await ask_llama_async(prompt, situation)
-    session["transcript"].append(("interviewer", reply))
     await sio.emit("ai_nudge", {"message": reply}, to=sid)
     return True
 

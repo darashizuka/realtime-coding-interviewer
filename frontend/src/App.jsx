@@ -147,7 +147,6 @@ function App() {
     socket.on('ai_nudge', (data) => {
       if (Date.now() - lastResponseTime.current < 8000) return;
       setAiLine({ text: data.message, kind: 'nudge' });
-      speakText(data.message);
       markActive();
     });
     socket.on('session_data', (data) => {
